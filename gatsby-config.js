@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `Rocket Docs`,
-    defaultTitle: `Rocket Docs`,
-    siteTitleShort: `Rocket Docs`,
-    siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
-    siteUrl: `https://rocketdocs.netlify.com`,
-    siteAuthor: `@rocketseat`,
-    siteImage: `/banner.png`,
-    siteLanguage: `en`,
+    siteTitle: `CV-UN-2020-II`,
+    defaultTitle: `CV-UN-2020-II`,
+    siteTitleShort: `CV-UN-2020-II`,
+    siteDescription: `Página con los talleres y proyecto de computación visual`,
+    siteUrl: `https://cv-un-2020-ii.github.io/`,
+    siteAuthor: `@afromana,@ndpinerosp,@gtzambranop`,
+    siteImage: ``,
+    siteLanguage: `es`,
     themeColor: `#8257E6`,
     basePath: `/`,
   },
@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.com`,
+        siteUrl: `https://cv-un-2020-ii.github.io/`,
       },
     },
     `gatsby-plugin-offline`,
