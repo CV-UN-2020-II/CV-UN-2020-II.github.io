@@ -8,7 +8,7 @@
       link: '/talleres/convolucion'
     - label: 'Prueba de p5'
       link: '/prueba'
-    - label: 'Prueba2 de p5'
+    - label: 'Segunda prueba de p5'
       link: '/prueba2'
 - label: 'Proyecto'
   items:
