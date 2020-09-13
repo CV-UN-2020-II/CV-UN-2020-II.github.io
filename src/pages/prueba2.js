@@ -1,13 +1,13 @@
 import React from "react";
 import Wraper from "../components/wrapper";
-import Sketch from "../components/sketch";
+import Sketch from "../components/sketch2";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 
-const prueba = () => (
+const prueba2 = () => (
     <Layout>
         <Wraper sk={Sketch}/>
     </Layout>
 
   )
 
-  export default prueba
+  export default prueba2
