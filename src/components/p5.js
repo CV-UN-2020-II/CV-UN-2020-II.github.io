@@ -1,10 +1,14 @@
 import React, { Component } from "react"
-import {loadableP5 as P5Wrapper} from './loadable';
-import Sketch from './Sketch';
+import Loadable from "@loadable/component";
+import Sketch from "./sketch";
+
+const LoadableP5 = Loadable(() => import('react-p5-wrapper'));
 
 export default class App extends Component{
-
   render() {
-    return <P5Wrapper sketch={Sketch} />
+    return( 
+        <LoadableP5 sketch={Sketch}/>
+       
+    )
   }
 }
