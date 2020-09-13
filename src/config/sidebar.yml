@@ -6,6 +6,8 @@
   items:
     - label: 'Convolución de imagenes'
       link: '/talleres/convolucion'
+    - label: 'Prueba de p5'
+      link: '/prueba'
 - label: 'Proyecto'
   items:
     - label: 'Propuesta'
