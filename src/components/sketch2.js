@@ -1,6 +1,4 @@
 export default function p5(p5) {
-
-    
   let x = 100;
   let y = 100;
 
