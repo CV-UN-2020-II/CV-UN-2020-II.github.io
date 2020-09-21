@@ -4,8 +4,8 @@
   link: '/'
 - label: 'Talleres'
   items:
-    - label: 'Convolución de imagenes'
-      link: '/talleres/convolucion'
+    - label: 'Procesamiento de imagenes'
+      link: '/procesamiento'
 - label: 'Proyecto'
   items:
     - label: 'Propuesta'
