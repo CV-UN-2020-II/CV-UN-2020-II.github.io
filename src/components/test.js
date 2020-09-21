@@ -56,10 +56,8 @@ export default function Test( p5 ) {
 
 
     p5.handleFile=(file)=> {
-        //p5.print(file);
         if (file.type === 'image') {
-            img = p5.loadImage(file.data, '');
-            p5.print(img.width)   //Parece que p5js fuera asincrono inside function
+            img = p5.loadImage(file.data, '');    
         } else {
             img = null;
         }
