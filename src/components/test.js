@@ -29,9 +29,39 @@ export default function Test( p5 ) {
         }else if(val=='2'){
             if(img){
                 drawRGBLuma(val)
-                //sel.selected(0);
+            }
+        }else if(val=='3'){
+            let v=1/9
+            var matr=[[v,v,v],[v,v,v],[v,v,v]]
+            drawConvolution(matr)
+        }
+    }
+
+    function drawConvolution(matr){
+        img.loadPixels();
+        copia=p5.createImage(img.width,img.height);
+        copia.loadPixels()
+        for(let x=1;x<img.width;x++){
+            for(let y=1;y<img.height;y++){
+                let sumR=0,sumG=0,sumB=0;
+                for(let kx=-1;kx<2;kx++){
+                    for(let ky=-1;ky<2;ky++){
+                        let posx=x+kx;
+                        let posy=y+ky;
+                        let val1= p5.red(img.get(posx,posy))
+                        let val2= p5.green(img.get(posx,posy))
+                        let val3= p5.blue(img.get(posx,posy))
+
+                        sumR+=matr[kx+1][ky+1]*val1
+                        sumG+=matr[kx+1][ky+1]*val2
+                        sumB+=matr[kx+1][ky+1]*val3
+                    }
+                }
+                copia.set(x,y,p5.color(sumR,sumG,sumB))
             }
         }
+        copia.updatePixels()
+        p5.image(copia, 450, 0, 350, 400);
     }
 
     
