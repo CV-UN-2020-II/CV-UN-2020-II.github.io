@@ -34,15 +34,21 @@ export default function Test( p5 ) {
             let v=1/9
             var matr=[[v,v,v],[v,v,v],[v,v,v]]
             drawConvolution(matr)
+        }else if(val=='4'){
+            let v=-1
+            var matr=[[v,v,v],[v,-8,v],[v,v,v]]
+            drawConvolution(matr)
         }
     }
 
+    
     function drawConvolution(matr){
         img.loadPixels();
         copia=p5.createImage(img.width,img.height);
         copia.loadPixels()
         for(let x=1;x<img.width;x++){
             for(let y=1;y<img.height;y++){
+               
                 let sumR=0,sumG=0,sumB=0;
                 for(let kx=-1;kx<2;kx++){
                     for(let ky=-1;ky<2;ky++){
@@ -64,7 +70,6 @@ export default function Test( p5 ) {
         p5.image(copia, 450, 0, 350, 400);
     }
 
-    
     function drawRGBLuma(option){
         let average,R,G,B;
         img.loadPixels();
@@ -90,6 +95,11 @@ export default function Test( p5 ) {
         copia.updatePixels();
         p5.image(copia, 450, 0, 350, 400);
     }
+
+
+
+    
+   
 
     p5.draw=()=> {
         if (img) {
