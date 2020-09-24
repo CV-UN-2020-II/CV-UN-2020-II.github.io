@@ -35,9 +35,7 @@ export default function Test( p5 ) {
             var k1=[[v,v,v],[v,v,v],[v,v,v]]
             drawConvolution(k1)
         }else if(val=='4'){
-            let v=-1
-            var matr=[[v,v,v],[v,-8,v],[v,v,v]]
-            drawConvolution(matr)
+            
         }
     }
 
