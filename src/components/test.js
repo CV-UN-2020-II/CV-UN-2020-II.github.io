@@ -11,9 +11,10 @@ export default function Test( p5 ) {
         sel.option('Promedio RGB','1');
         sel.option('Luma','2');
         sel.option('Efecto borroso','3');
-        sel.option('Deteccion de bordes','4');
-        sel.option('Histograma','5');
-        sel.option('Segmentacion','6');
+        sel.option('Deteccion de bordes','4')
+        sel.option('Sharpen','5');
+        sel.option('Histograma','6');
+        sel.option('Segmentacion','7');
         sel.selected('0');
         sel.changed(change)
         p5.createCanvas(800, 400);
@@ -31,11 +32,17 @@ export default function Test( p5 ) {
                 drawRGBLuma(val)
             }
         }else if(val=='3'){
-            let v=1
-            var k1=[[v,v,v],[v,v,v],[v,v,v]]
+            let v=1/9
+            let k1=[[v,v,v],[v,v,v],[v,v,v]]
             drawConvolution(k1)
         }else if(val=='4'){
-            
+            let v=-1
+            let k1=[[v,v,v],[v,8,v],[v,v,v]]
+            drawConvolution(k1)
+        }else if(val=='5'){
+            let v=-1
+            let k1=[[0,v,0],[v,5,v],[0,v,0]]
+            drawConvolution(k1)
         }
     }
 
@@ -67,7 +74,7 @@ export default function Test( p5 ) {
 				var p6 = img.pixels[ll]*k1[2][0]; 
 				var p7 = img.pixels[lc]*k1[2][1]; 
 				var p8 = img.pixels[lr]*k1[2][2]; 
-				var red = (p0+p1+p2+p3+p4+p+p6+p7+p8)/9;
+				var red = p0+p1+p2+p3+p4+p+p6+p7+p8;
 					
                 p0 = img.pixels[ul+1]*k1[0][0]; 
                 p1 = img.pixels[uc+1]*k1[0][1]; 
@@ -78,7 +85,7 @@ export default function Test( p5 ) {
 				p6 = img.pixels[ll+1]*k1[2][0]; 
 				p7 = img.pixels[lc+1]*k1[2][1]; 
 				p8 = img.pixels[lr+1]*k1[2][2];
-				var green = (p0+p1+p2+p3+p4+p+p6+p7+p8)/9;
+				var green = p0+p1+p2+p3+p4+p+p6+p7+p8;
 					
 				p0 = img.pixels[ul+2]*k1[0][0];
 				p1 = img.pixels[uc+2]*k1[0][1];
@@ -89,7 +96,7 @@ export default function Test( p5 ) {
 				p6 = img.pixels[ll+2]*k1[2][0];
 				p7 = img.pixels[lc+2]*k1[2][1];
 				p8 = img.pixels[lr+2]*k1[2][2];
-				var blue = (p0+p1+p2+p3+p4+p+p6+p7+p8)/9;
+				var blue = p0+p1+p2+p3+p4+p+p6+p7+p8;
 					
 				copia.pixels[mc] = red;
 				copia.pixels[mc+1] = green;
