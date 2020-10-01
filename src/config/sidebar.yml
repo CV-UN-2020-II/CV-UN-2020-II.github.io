@@ -4,8 +4,10 @@
   link: '/'
 - label: 'Talleres'
   items:
-    - label: 'Procesamiento de imagenes'
+    - label: 'Procesamiento de imagenes y videos por software'
       link: '/procesamiento'
+    - label: 'Procesamiento de imagenes y videos por hardware'
+      link: '/procesamiento2'
 - label: 'Proyecto'
   items:
     - label: 'Propuesta'
