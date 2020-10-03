@@ -2,7 +2,6 @@ export default function Test( p5 ) {
     var img;
     var copia;
     var sel;
-    var ex;
 
     p5.setup=()=> {
 
@@ -55,17 +54,18 @@ export default function Test( p5 ) {
         copia.loadPixels()
         var h=img.height;
         var w=img.width;
-        for(let x=0;x<w;x++){
-            for(let y=0;y<h;y++){
-                var ul = ((x-1+w)%w + w*((y-1+h)%h))*4; 
-				var uc = ((x-0+w)%w + w*((y-1+h)%h))*4; 
-				var ur = ((x+1+w)%w + w*((y-1+h)%h))*4; 
-				var ml = ((x-1+w)%w + w*((y+0+h)%h))*4; 
-				var mc = ((x-0+w)%w + w*((y+0+h)%h))*4; 
-				var mr = ((x+1+w)%w + w*((y+0+h)%h))*4; 
-				var ll = ((x-1+w)%w + w*((y+1+h)%h))*4; 
-				var lc = ((x-0+w)%w + w*((y+1+h)%h))*4; 
-                var lr = ((x+1+w)%w + w*((y+1+h)%h))*4;
+        for(let y=0;y<h;y++){
+            for(let x=0;x<w;x++){
+                //console.log("Aqui")
+                var mc=(x+y*img.width)*4;
+                var ul=((x-1)+(y-1)*img.width)*4;
+                var uc=((x)+(y-1)*img.width)*4;
+                var ur=((x+1)+(y-1)*img.width)*4;
+                var ml=((x-1)+(y)*img.width)*4;
+                var mr=((x+1)+(y)*img.width)*4;
+                var ll=((x-1)+(y+1)*img.width)*4;
+                var lc=((x)+(y+1)*img.width)*4;
+                var lr=((x+1)+(y+1)*img.width)*4;
                 
                 var p0 = img.pixels[ul]*k1[0][0]; 
                 var p1 = img.pixels[uc]*k1[0][1]; 
@@ -103,7 +103,7 @@ export default function Test( p5 ) {
 				copia.pixels[mc] = red;
 				copia.pixels[mc+1] = green;
 				copia.pixels[mc+2] = blue;
-				copia.pixels[mc+3] = img.pixels[lc+3];      
+				copia.pixels[mc+3] = img.pixels[mc+3];      
             }
         }
         copia.updatePixels()

@@ -82,6 +82,12 @@ const procesamiento = () => (
         </ol>
         
         <h2>Procesamiento de videos</h2>
+        <p>
+            Se utilizaron las mismas tecnicas aplicadas para imágenes para el procesamiento del video. En este casos
+            debido a la cantidad de frames y pixeles que tiene que procesar el algoritmo no fue posible los efectos que impliquen
+            convolución de imagen (borroso,detección de bordes y sharpen). Por tal motivo se determino llevar a cabo ese algoritmo 
+            a processing.
+        </p>
         <Wraper sk={Video}/>
         <ol>
             <li>
