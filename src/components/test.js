@@ -2,6 +2,7 @@ export default function Test( p5 ) {
     var img;
     var copia;
     var sel;
+    var ex;
 
     p5.setup=()=> {
 
@@ -18,6 +19,7 @@ export default function Test( p5 ) {
         sel.selected('0');
         sel.changed(change)
         p5.createCanvas(800, 400);
+
     }
 
     function change(){
