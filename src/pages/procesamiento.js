@@ -1,15 +1,17 @@
 import React from "react";
 import Wraper from "../components/wrapper";
 import Sketch from "../components/test";
+import Video from "../components/pruvideo";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 
 const procesamiento = () => (
     <Layout>
-        <h1>Procesamiento de imágenes y videos</h1>
+        <h1>Procesamiento de imágenes y videos por software</h1>
         <p>
                 Dentro del procesamiento de imágenes y videos existen una variedad de efectos que pueden ser aplicados, a continuación se presentarán algunos de ellos desde un punto de vista teórico y práctico mediante el uso de la librería p5.js que es el homólogo del programa de Processing pero diseñado para poder desplegar el resultado en web.
         </p>
         <h2>Procesamiento de imágenes</h2>
+        <Wraper sk={Sketch}/>
         <p>
             Cuando se carga una imagen esta es representada internamente en p5.js mediante una arreglo llamado
             pixels[] el cual difiere un poco a como se maneja en Processing.
@@ -78,10 +80,15 @@ const procesamiento = () => (
             <li><h3>Histograma de la imagen</h3></li>
             <li><h3>Segmentación de imagenes</h3></li>
         </ol>
-        <div id="my">
-            <Wraper sk={Sketch}/>
-        </div>
+        
         <h2>Procesamiento de videos</h2>
+        <p>
+            Se utilizaron las mismas tecnicas aplicadas para imágenes para el procesamiento del video. En este casos
+            debido a la cantidad de frames y pixeles que tiene que procesar el algoritmo no fue posible los efectos que impliquen
+            convolución de imagen (borroso,detección de bordes y sharpen). Por tal motivo se determino llevar a cabo ese algoritmo 
+            a processing.
+        </p>
+        <Wraper sk={Video}/>
         <ol>
             <li>
                 <h3>Escala de grises</h3>
