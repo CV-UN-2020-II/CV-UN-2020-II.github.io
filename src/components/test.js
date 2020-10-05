@@ -53,7 +53,6 @@ export default function Test( p5 ) {
         }
     }
 
-
     function drawConvolution(k1){
         img.loadPixels();
         copia=p5.createImage(img.width,img.height);
@@ -72,16 +71,16 @@ export default function Test( p5 ) {
                 var ll=((x-1)+(y+1)*img.width)*4;
                 var lc=((x)+(y+1)*img.width)*4;
                 var lr=((x+1)+(y+1)*img.width)*4;
-                
-                var p0 = img.pixels[ul]*k1[0][0]; 
-                var p1 = img.pixels[uc]*k1[0][1]; 
-                var p2 = img.pixels[ur]*k1[0][2]; 
-				var p3 = img.pixels[ml]*k1[1][0]; 
-				var p4 = img.pixels[mc]*k1[1][1]; 
-				var p = img.pixels[mr]*k1[1][2]; 
-				var p6 = img.pixels[ll]*k1[2][0]; 
-				var p7 = img.pixels[lc]*k1[2][1]; 
-				var p8 = img.pixels[lr]*k1[2][2]; 
+
+                var p0 = img.pixels[ul]*k1[0][0];
+                var p1 = img.pixels[uc]*k1[0][1];
+                var p2 = img.pixels[ur]*k1[0][2];
+				var p3 = img.pixels[ml]*k1[1][0];
+				var p4 = img.pixels[mc]*k1[1][1];
+				var p = img.pixels[mr]*k1[1][2];
+				var p6 = img.pixels[ll]*k1[2][0];
+				var p7 = img.pixels[lc]*k1[2][1];
+				var p8 = img.pixels[lr]*k1[2][2];
 
 				var red = p0+p1+p2+p3+p4+p+p6+p7+p8;
 
@@ -110,7 +109,7 @@ export default function Test( p5 ) {
 				copia.pixels[mc] = red;
 				copia.pixels[mc+1] = green;
 				copia.pixels[mc+2] = blue;
-				copia.pixels[mc+3] = img.pixels[mc+3];      
+				copia.pixels[mc+3] = img.pixels[mc+3];
 
             }
         }
@@ -143,7 +142,7 @@ export default function Test( p5 ) {
         copia.updatePixels();
         p5.image(copia, 450, 0, 350, 400);
     }
-    
+
     function drawRGBLuma2(option){
         let average,R,G,B;
         img.loadPixels();
@@ -157,7 +156,7 @@ export default function Test( p5 ) {
 				B=img.pixels[index+2]
 
                 average=0.2126*R + 0.7152*G + 0.0722*B
-                
+
 				copia.pixels[index+0] = average
 				copia.pixels[index+1] = average
 				copia.pixels[index+2] = average
@@ -167,34 +166,9 @@ export default function Test( p5 ) {
         copia.updatePixels();
         copia.loadPixels();
 
-        //By Yarid
-        let promedioCopia = 0;
-        let valores = 0;
-        let cant = copia.width*copia.height;
-        let mitadPromedio = 0;
-        for (var i = 0; i < copia.pixels.length; i = i+4) {
-            valores = valores + copia.pixels[i]
-        }
-        promedioCopia = valores/cant;
-        mitadPromedio = promedioCopia/2;
-
         copia2 = p5.createImage(copia.width, copia.height);
-        copia2.loadPixels();
+		copia2.loadPixels();
 
-        
-        // for (var i = 0; i < copia.pixels.length; i = i+4) {
-        //     if(copia.pixels[i] < promedioCopia){
-        //         copia2.pixels[i] = 0
-		// 		copia2.pixels[i+1] = 0
-        //         copia2.pixels[i+2] = 0
-        //         copia2.pixels[i+3] = 255
-        //     }else{
-        //         copia2.pixels[i] = 255
-		// 		copia2.pixels[i+1] = 255
-        //         copia2.pixels[i+2] = 255
-        //         copia2.pixels[i+3] = 255
-        //     }
-        // }
         for (var i = 0; i < copia.pixels.length; i = i+4) {
             if(copia.pixels[i] < 64){
                 copia2.pixels[i] = 0
@@ -217,19 +191,15 @@ export default function Test( p5 ) {
                 copia2.pixels[i+2] = 255
                 copia2.pixels[i+3] = 255
             }
-        }
-        console.log(promedioCopia);
+		}
 
         copia2.updatePixels();
         copia.loadPixels();
         p5.image(copia2, 450, 0, 350, 400);
-        
-    }
-    
-
+	}
 
 	function drawHistogram(){
-        let R,G,B, maxRange, x, y, index, i;
+        let R,G,B, maxRange, x, y, index	;
 		img.loadPixels();
 
 		let bright;
@@ -239,9 +209,15 @@ export default function Test( p5 ) {
 		h = 400;
 
 		maxRange = 256;
-		var histogram = new Array(maxRange);
+		var histogramL = new Array(maxRange);
+		var histogramR = new Array(maxRange);
+		var histogramG = new Array(maxRange);
+		var histogramB = new Array(maxRange);
 		for (x = 0; x <= maxRange; x++) {
-			histogram[x] = 0
+			histogramL[x] = 0
+			histogramR[x] = 0
+			histogramG[x] = 0
+			histogramB[x] = 0
 		}
 
 		for (x = 0; x < img.width; x++){
@@ -251,13 +227,26 @@ export default function Test( p5 ) {
 				G=img.pixels[index+1]
 				B=img.pixels[index+2]
 				bright = p5.int(0.2126*R + 0.7152*G + 0.0722*B)
-				histogram[bright]++;
+				histogramL[bright]++;
+				histogramR[R]++;
+				histogramG[G]++;
+				histogramB[B]++;
 			}
 		}
 
-		p5.image(img, 450, 0, 350, 400);
-		p5.stroke(0, 0, 255)
+		var color = [255, 0, 0]
+		p5.histogram(color, histogramR, w, h);
+		color = [0, 255, 0]
+		p5.histogram(color, histogramG, w, h);
+		color = [0, 0, 255]
+		p5.histogram(color, histogramB, w, h);
+		color = [0, 0, 0]
+		p5.histogram(color, histogramL, w, h);
+	}
 
+	p5.histogram = (color, histogram, w, h) => {
+		var i, x, y;
+		p5.stroke(color[0], color[1], color[2])
 		for (x = 0; x < w; x += 2) {
 			i = p5.int(p5.map(x, 0, w, 0, 255));
 			y = p5.int(p5.map(histogram[i], 0, p5.max(histogram), h, 0));
