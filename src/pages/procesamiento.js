@@ -144,27 +144,44 @@ const procesamiento = () => (
             a processing.
         </p>
         <Wraper sk={Video}/>
+        <p>
+            Se aplicaron las mismas tecnicas utilizadas para las imagenes pero debido a causas desconocidas los efectos
+            que involucran mascaras de convolución no son los suficientemente eficientes para ser procesados, por tal motivo
+            se decidio pasar a realizarlos en processing. A continuación se explicara la tecnica utilizada en processing para el 
+            procesamiento de video.
+        </p>
         <ol>
             <li>
-                <h3>Escala de grises</h3>
-                <ol>
-                    <li><h4>Promedio RGB</h4></li>
-                    <li><h4>Promedio LUMA</h4></li>
-                </ol>
-            </li>
-            <li>
                 <h3>Máscaras de convolución</h3>
+                <p>
+                    Cabe aclarar que en processing como discutiamos anteriormente los pixeles son representados 
+                    de forma distinta a como lo realiza P5JS de ahi a que haya tocado modificar y cambiar el código respectivo
+                </p>
+                
                 <ol>
                     <li><h4>Efecto borroso</h4></li>
+                    <p>
+                        En este caso se utilizo la siguiente matriz para aplicar dicho efecto,pero al parcer
+                        no se alcanza a percibir muy claramente el efecto borroso en la imagen
+                    </p>
+                    <img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;0.11&space;&&space;0.11&space;&&space;0.11\\&space;0.11&space;&&space;0.11&space;&&space;0.11\\&space;0.11&space;&&space;0.11&space;&&space;0.11&space;\end{pmatrix}"/>
                     <li><h4>Detección de bordes</h4></li>
-                    <li><h4>Efecto sharpen</h4></li>
+                    <p>
+                        En este caso se utilizo la siguiente matriz para aplicar dicho efecto,aqui si se logra ver claramente como el efecto fue aplicado y como utilizamos el mismo algoritmo 
+                        que el efecto borroso solo que se modifico la matriz utilizada      
+                    </p>
+                    <img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;-6&space;&&space;0&space;&&space;0\\&space;0&space;&&space;6&space;&&space;0\\&space;0&space;&&space;0&space;&&space;-6&space;\end{pmatrix}"/>
+                    <p>
+                    <strong>PD:</strong> Para ejecutar el programa en processing hay que pulsar una tecla b para borroso y e para detección de bordes
+                    </p>
                 </ol>
             </li>
-            <li>
-                <h4>Eficiencia computacional</h4>
-            </li>
         </ol>
-        <h2>Conclusiones y dificultades encontradas</h2>
+        <h2>Dificultades encontradas</h2>
+        <ul>
+            <li>Difilcultad para el manejo del arreglo de pixels en P5JS</li>
+            <li>La falta de funciones equivalentes de un lenguaje a otro que en teoria son hermanos hizo que el resultado presentado en uno sea distinto a como se muestra en otro</li>
+        </ul>
     </Layout>
 )
 export default procesamiento

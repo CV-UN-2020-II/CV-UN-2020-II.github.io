@@ -251,7 +251,8 @@ export default function Test( p5 ) {
 			i = p5.int(p5.map(x, 0, w, 0, 255));
 			y = p5.int(p5.map(histogram[i], 0, p5.max(histogram), h, 0));
 			p5.line(x + 450, y, x + 450, h);
-		}
+        }
+        //img.
 	}
 
     p5.draw=()=> {
