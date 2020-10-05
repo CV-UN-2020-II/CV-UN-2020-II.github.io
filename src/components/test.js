@@ -1,6 +1,7 @@
 export default function Test( p5 ) {
     var img;
     var copia;
+    var copia2;
     var sel;
 
     p5.setup=()=> {
@@ -36,8 +37,8 @@ export default function Test( p5 ) {
             let k1=[[v,v,v],[v,v,v],[v,v,v]]
             drawConvolution(k1)
         }else if(val=='4'){
-            let v=-1
-            let k1=[[v,v,v],[v,8,v],[v,v,v]]
+            let v=1
+            let k1=[[v,v,v],[v,-8,v],[v,v,v]]
             drawConvolution(k1)
         }else if(val=='5'){
             let v=-1
@@ -45,7 +46,11 @@ export default function Test( p5 ) {
             drawConvolution(k1)
         }else if(val == '6'){
 			drawHistogram()
-		}
+        }else if(val == '8'){
+            if(img){
+                drawRGBLuma2(val)
+            }
+        }
     }
 
 
@@ -137,7 +142,90 @@ export default function Test( p5 ) {
           }
         copia.updatePixels();
         p5.image(copia, 450, 0, 350, 400);
-	}
+    }
+    
+    function drawRGBLuma2(option){
+        let average,R,G,B;
+        img.loadPixels();
+        copia=p5.createImage(img.width, img.height)
+        copia.loadPixels();
+        for (var y = 0; y < img.height; y++) {
+            for (var x = 0; x < img.width; x++) {
+				var index = (x + y * img.width)*4;
+				R=img.pixels[index+0]
+				G=img.pixels[index+1]
+				B=img.pixels[index+2]
+
+                average=0.2126*R + 0.7152*G + 0.0722*B
+                
+				copia.pixels[index+0] = average
+				copia.pixels[index+1] = average
+				copia.pixels[index+2] = average
+				copia.pixels[index+3] = img.pixels[index+3]
+            }
+        }
+        copia.updatePixels();
+        copia.loadPixels();
+
+        //By Yarid
+        let promedioCopia = 0;
+        let valores = 0;
+        let cant = copia.width*copia.height;
+        let mitadPromedio = 0;
+        for (var i = 0; i < copia.pixels.length; i = i+4) {
+            valores = valores + copia.pixels[i]
+        }
+        promedioCopia = valores/cant;
+        mitadPromedio = promedioCopia/2;
+
+        copia2 = p5.createImage(copia.width, copia.height);
+        copia2.loadPixels();
+
+        
+        // for (var i = 0; i < copia.pixels.length; i = i+4) {
+        //     if(copia.pixels[i] < promedioCopia){
+        //         copia2.pixels[i] = 0
+		// 		copia2.pixels[i+1] = 0
+        //         copia2.pixels[i+2] = 0
+        //         copia2.pixels[i+3] = 255
+        //     }else{
+        //         copia2.pixels[i] = 255
+		// 		copia2.pixels[i+1] = 255
+        //         copia2.pixels[i+2] = 255
+        //         copia2.pixels[i+3] = 255
+        //     }
+        // }
+        for (var i = 0; i < copia.pixels.length; i = i+4) {
+            if(copia.pixels[i] < 64){
+                copia2.pixels[i] = 0
+				copia2.pixels[i+1] = 0
+                copia2.pixels[i+2] = 0
+                copia2.pixels[i+3] = 255
+            }else if(copia.pixels[i] < 128){
+                copia2.pixels[i] = 255
+				copia2.pixels[i+1] = 0
+                copia2.pixels[i+2] = 255
+                copia2.pixels[i+3] = 255
+            }else if(copia.pixels[i] < 192){
+                copia2.pixels[i] = 0
+				copia2.pixels[i+1] = 255
+                copia2.pixels[i+2] = 255
+                copia2.pixels[i+3] = 255
+            }else{
+                copia2.pixels[i] = 255
+				copia2.pixels[i+1] = 255
+                copia2.pixels[i+2] = 255
+                copia2.pixels[i+3] = 255
+            }
+        }
+        console.log(promedioCopia);
+
+        copia2.updatePixels();
+        copia.loadPixels();
+        p5.image(copia2, 450, 0, 350, 400);
+        
+    }
+    
 
 
 	function drawHistogram(){
