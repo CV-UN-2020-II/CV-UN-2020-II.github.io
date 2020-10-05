@@ -52,7 +52,6 @@ const procesamiento = () => (
                             Para el caso del efecto borroso se utilizó la técnica conocida box blur la cual toma una matriz de 3x3, donde cada una de las celdas tiene el valor de 1/9 como se presenta a continuación.
                         </p>
                         <img src="https://latex.codecogs.com/png.latex?K=\begin{pmatrix}&space;\frac{1}{9}&space;&&space;\frac{1}{9}&space;&&space;\frac{1}{9}&space;\\[6pt]&space;\frac{1}{9}&space;&&space;\frac{1}{9}&space;&&space;\frac{1}{9}\\[6pt]&space;\frac{1}{9}&space;&&space;\frac{1}{9}&space;&&space;\frac{1}{9}&space;\end{pmatrix}" alt=""/>
-                        
                     </li>
                     <li>
                         <h4>Detección de bordes</h4>
@@ -77,10 +76,66 @@ const procesamiento = () => (
                     código presentado a continuación:
                 </p>
             </li>
-            <li><h3>Histograma de la imagen</h3></li>
-            <li><h3>Segmentación de imagenes</h3></li>
+            <li>
+				<h3>Histograma de la imagen</h3>
+				<p>
+					Es una distribución gráfica de los distintos tonos de una imagen, la mostrada en la presente pŕactica representa
+					256 tonos de los colores Rojo, Verde y Azul, además de 256 niveles de brillo.
+				</p>
+				<h4>Creación de la gráfica</h4>
+				<p>
+					Para la creación de la gráfica, se declararon 4 arreglos, uno para cada color RGB y otro para el brillo, luego se
+					evaluó cada pixel de la imagen, calculando su brillo (siendo este valor transformado en un entero entre 0 y 255),
+					e incremmentando el valor correspondiente al tono de cada color y brillo en su arreglo correspondiente.
+				</p>
+				<p>
+					Finalmente se mapea la longitud de los arrays con el tamaño de la imagen, para dibujar las líneas que representen
+					los diferentes tonos y brillos procesados.
+				</p>
+				<h4>Interpretación de la Gráfica</h4>
+				<p>
+					En esta se ven 4 gráficas superpuestas, donde la que tiene el color negro representa el brillo, y las demás tienen
+					el color de los tonos que buscan representar.
+				</p>
+				<h5>Tonos Oscuros</h5>
+				<p>
+					La gráfica tiende a desplazarse a la izquierda, ya que los tonos de los colores utilizados son más oscuros, y por ende
+					su brillo es más bajo.
+				</p>
+				<img src="images/histogram_00.png"/>
+				<h5>Tonos Claros</h5>
+				<p>
+					La gráfica tiende a desplazarse a la derecha, puesto que los tonos presentes en la misma son claros y su brillo es más alto.
+				</p>
+				<img src="images/histogram_01.png"/>
+				<h5>Distribución Homogénea</h5>
+				<p>
+					El histograma se distribuye a lo largo de todo el eje horizontal, esto porque no existen zonas quemadas ni excesivamente
+					oscuras, por lo que no se encontrarán grandes picos en la gráfica.
+				</p>
+				<img src="images/histogram_02.png"/>
+			</li>
+            <li>
+				<h3>Segmentación de imagenes</h3>
+				<p>
+					La segmentación es el proceso de dividir la imagen en grupos de pixeles, el objetivo es simplificar o cambiar la representación de
+					la misma que resulta más significativa y fácil de analizar. Esta es utilizada para localizar objetos como para encontrar los
+					límites de estos en una imágen.
+				</p>
+				<p>
+					Para la creación de esta funcionalidad, se procesó la imagen, transformandola a un formato de escala de grises utilizando el
+					algorítmo luma, luego de ello se definieron 4 grupos y se les asignó un color:
+					<ul>
+						<li>Aquellos cuyo brillo estuviera entre 0 y 63, fueron redefinidos con el color negro.</li>
+						<li>Aquellos cuyo brillo estuviera entre 64 y 127, fueron redefinidos con el color cyan.</li>
+						<li>Aquellos cuyo brillo estuviera entre 128 y 191, fueron redefinidos con el color magenta.</li>
+						<li>Aquellos cuyo brillo estuviera entre 192 y 255, fueron redefinidos con el color blanco.</li>
+					</ul>
+					El resultado de la segmentación previamente explicado, es el siguiente:
+				</p>
+				<img src="images/segmentation.png"/>
+			</li>
         </ol>
-        
         <h2>Procesamiento de videos</h2>
         <p>
             Se utilizaron las mismas tecnicas aplicadas para imágenes para el procesamiento del video. En este casos

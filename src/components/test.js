@@ -14,7 +14,7 @@ export default function Test( p5 ) {
         sel.option('Deteccion de bordes','4')
         sel.option('Sharpen','5');
 		sel.option('Histograma','6');
-        sel.option('Segmentacion','8');
+        sel.option('Segmentación','8');
         sel.selected('0');
         sel.changed(change)
         p5.createCanvas(800, 400);
