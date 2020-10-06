@@ -24,6 +24,15 @@ const procesamiento2=()=>(
             <li><h2>Detección de bordes</h2></li>
         </ol>
         <h2>Resultados y algunos gráficos</h2>
+        <p>
+            A pesar de que se lograron los objetivos propuestos de realizar los diferentes efectos tanto en imagenes como en video
+            los resultados obtenidos no fueron los esperados, ya que como se muestra a continuación en los 2 gráficos el uso de shaders
+            hizo que el rendimiento del mismo bajara considerablemente aunque como se puede observar al final el rendimiento tanto de shader
+            como por software termina siendo muy similar
+        </p>
+        <img src="Tabla.PNG" alt=""/>
+        <br/>
+        <img src="frame.PNG" alt=""/>
         <p><strong>Link al repositorio de procesing: </strong><a href="https://github.com/CV-UN-2020-II/talleres/tree/main/Taller1">Taller 1</a></p>
     </Layout>
 )
