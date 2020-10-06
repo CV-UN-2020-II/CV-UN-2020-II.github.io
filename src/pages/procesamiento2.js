@@ -16,8 +16,12 @@ const procesamiento2=()=>(
         </p>
         <ol>
             <li><h2>Escala de grises usando Luma</h2></li>
-
-            <li><h2>Deteccion de bordes</h2></li>
+                <p>
+                    Para la escala de grises se utilizo un shader que toma cada frame del video como una textura, la cual
+                    es procesada mediante el uso de la GPU de cada pixel en simultaneo y se le aplica la siguiente formula
+                </p>
+                <img src="https://latex.codecogs.com/png.latex?P=0.2126*R&space;&plus;&space;0.7152*G&space;&plus;&space;0.0722*B" alt=""/>
+            <li><h2>Detección de bordes</h2></li>
         </ol>
         <h2>Resultados y algunos gráficos</h2>
         <p><strong>Link al repositorio de procesing: </strong><a href="https://github.com/CV-UN-2020-II/talleres/tree/main/Taller1">Taller 1</a></p>
