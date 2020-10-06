@@ -102,18 +102,18 @@ const procesamiento = () => (
 					La gráfica tiende a desplazarse a la izquierda, ya que los tonos de los colores utilizados son más oscuros, y por ende
 					su brillo es más bajo.
 				</p>
-				<img src="images/histogram_00.png"/>
+				<img src="histogram_00.png"/>
 				<h5>Tonos Claros</h5>
 				<p>
 					La gráfica tiende a desplazarse a la derecha, puesto que los tonos presentes en la misma son claros y su brillo es más alto.
 				</p>
-				<img src="images/histogram_01.png"/>
+				<img src="histogram_01.png"/>
 				<h5>Distribución Homogénea</h5>
 				<p>
 					El histograma se distribuye a lo largo de todo el eje horizontal, esto porque no existen zonas quemadas ni excesivamente
 					oscuras, por lo que no se encontrarán grandes picos en la gráfica.
 				</p>
-				<img src="images/histogram_02.png"/>
+				<img src="histogram_02.png"/>
 			</li>
             <li>
 				<h3>Segmentación de imagenes</h3>
@@ -133,7 +133,7 @@ const procesamiento = () => (
 					</ul>
 					El resultado de la segmentación previamente explicado, es el siguiente:
 				</p>
-				<img src="images/segmentation.png"/>
+				<img src="segmentation.png"/>
 			</li>
         </ol>
         <h2>Procesamiento de videos</h2>
