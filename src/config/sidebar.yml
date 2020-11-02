@@ -1,16 +1,18 @@
 # Sidebar navigation
 
-- label: 'Introducción'
-  link: '/'
-- label: 'Talleres'
+- label: "Introducción"
+  link: "/"
+- label: "Talleres"
   items:
-    - label: 'Procesamiento de imagenes y videos por software'
-      link: '/procesamiento'
-    - label: 'Procesamiento de imagenes y videos por hardware'
-      link: '/procesamiento2'
-- label: 'Proyecto'
+    - label: "Procesamiento de imagenes y videos por software"
+      link: "/procesamiento"
+    - label: "Procesamiento de imagenes y videos por hardware"
+      link: "/procesamiento2"
+    - label: "Ilusiones"
+      link: "/ilusiones"
+- label: "Proyecto"
   items:
-    - label: 'Propuesta'
+    - label: "Propuesta"
       link: /proyecto/propuesta
-    - label: 'Entregable'
+    - label: "Entregable"
       link: /proyecto/entregable
