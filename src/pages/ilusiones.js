@@ -21,6 +21,7 @@ const ilusiones=()=>(
             es movimiento pero en realidad son 4 lineas las cuales se comportan arbitrariamente. Esta ilusion
             se logra gracias a los 4 cuadrados estaticos de las esquinas.
            </p>
+           <span>Nota: </span> Click para quitar o poner los cuadrados
            <Wraper sk={ilusion2}/>
        </ol>
       
