@@ -2,6 +2,8 @@ import React from "react";
 import Wraper from "../components/wrapper";
 import ilusion1 from "../components/ilusion1";
 import ilusion2 from "../components/ilusion2";
+import ilusion3 from "../components/ilusion3";
+import ilusion4 from "../components/ilusion4";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 
 const ilusiones=()=>(
@@ -21,8 +23,12 @@ const ilusiones=()=>(
             es movimiento pero en realidad son 4 lineas las cuales se comportan arbitrariamente. Esta ilusion
             se logra gracias a los 4 cuadrados estaticos de las esquinas.
            </p>
-           <span>Nota: </span> Click para quitar o poner los cuadrados
+           <b>Nota: </b> Click para quitar o poner los cuadrados
            <Wraper sk={ilusion2}/>
+           <h2><li>Motion Dots Illusion</li></h2>
+           <Wraper sk={ilusion3}/>
+           <h2><li>The Stereokinetic Effect</li></h2>
+           <Wraper sk={ilusion4}/>
        </ol>
       
     </Layout>
