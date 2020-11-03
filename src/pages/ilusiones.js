@@ -3,7 +3,6 @@ import Wraper from "../components/wrapper";
 import ilusion1 from "../components/ilusion1";
 import ilusion2 from "../components/ilusion2";
 import ilusion3 from "../components/ilusion3";
-import ilusion4 from "../components/ilusion4";
 import ilusion5 from "../components/ilusion5";
 import ilusion6 from "../components/ilusion6";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
