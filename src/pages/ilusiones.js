@@ -76,19 +76,31 @@ const ilusiones=()=>(
                 <tr>
                     <td>Kanizsa</td>
                     <td>Contorno</td>
-                    <td>https://commons.wikimedia.org/wiki/File:Illusory_star.svg</td>
+                    <td><a href="https://commons.wikimedia.org/wiki/File:Illusory_star.svg">https://commons.wikimedia.org/wiki/File:Illusory_star.svg</a> </td>
                     <td>No aplica</td>
+                </tr>
+                <tr>
+                    <td>Breathing Square</td>
+                    <td>Geometrica,<br/>movimiento</td>
+                    <td><a href="https://michaelbach.de/ot/mot-breathingSquare/index.html">https://michaelbach.de/ot/mot-breathingSquare/index.html</a></td>
+                    <td>Flecha izquierda para ocultar cuadrados</td>
+                </tr>
+                <tr>
+                    <td>Stepping feet</td>
+                    <td>Movimiento</td>
+                    <td><a href="https://michaelbach.de/ot/mot-feetLin/index.html">https://michaelbach.de/ot/mot-feetLin/index.html</a> </td>
+                    <td>Espacio para quitar las lineas</td>
                 </tr>
                 <tr>
                     <td>Motion Binding</td>
                     <td>Movimiento,<br/>interactividad</td>
-                    <td>https://michaelbach.de/ot/mot-motionBinding/index.html</td>
+                    <td><a href="https://michaelbach.de/ot/mot-motionBinding/index.html">https://michaelbach.de/ot/mot-motionBinding/index.html</a> </td>
                     <td>Click izquierdo para mostrar cuadrados</td>
                 </tr>
                 <tr>
                     <td>Motion Dots</td>
                     <td>Movimiento</td>
-                    <td>https://medium.com/@naziafakhruddin/creating-illusions-in-p5-js-part-3-moving-dot-illusion-a67157723838</td>
+                    <td><a href="https://medium.com/@naziafakhruddin/creating-illusions-in-p5-js-part-3-moving-dot-illusion-a67157723838">https://medium.com/@naziafakhruddin/creating-illusions-in-p5-js-part-3-moving-dot-illusion-a67157723838</a> </td>
                     <td>No aplica</td>
                 </tr>
                 <tr>
@@ -100,7 +112,7 @@ const ilusiones=()=>(
                 <tr>
                     <td>Muller-Lyer</td>
                     <td>Distorsion, <br/> Interactividad</td>
-                    <td>https://michaelbach.de/ot/sze-muelue/index.html</td>
+                    <td><a href="https://michaelbach.de/ot/sze-muelue/index.html">https://michaelbach.de/ot/sze-muelue/index.html</a> </td>
                     <td>Flecha derecha para punto central</td>
 
                 </tr>
