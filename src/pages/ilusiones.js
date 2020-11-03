@@ -27,7 +27,7 @@ const ilusiones=()=>(
            <Wraper sk={ilusion7}/>
            <h2><li>Stepping feet Illusion</li></h2>
            <p>
-            Los dos rectángulos se mueven igual, pero pareciera que se mueven de a pasos. Presione ESPACIO para quitar las franjas. Tomado de https://michaelbach.de/ot/mot-feetLin/index.html
+            Los dos rectángulos se mueven igual, pero pareciera que se mueven de a pasos.
            </p>
            <Wraper sk={ilusion8}/>
            <h2><li>Motion Binding Illusion</li></h2>
