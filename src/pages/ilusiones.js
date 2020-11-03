@@ -2,8 +2,8 @@ import React from "react";
 import Wraper from "../components/wrapper";
 import ilusion1 from "../components/ilusion1";
 import ilusion2 from "../components/ilusion2";
-import ilusion3 from "../components/ilusion3";
-import ilusion4 from "../components/ilusion4";
+import ilusion7 from "../components/ilusion7";
+import ilusion8 from "../components/ilusion8";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 
 const ilusiones=()=>(
@@ -29,12 +29,12 @@ const ilusiones=()=>(
            <p>
             Visualmente, el cuadrado escondido parece estar haciéndose más grande o más pequeño, pero solo está rotando. Presione IZQUIERDA para ocultar los cuadrados naranjas y DERECHA para mostrarlos. Tomado de https://michaelbach.de/ot/mot-breathingSquare/index.html
            </p>
-           <Wraper sk={ilusion3}/>
+           <Wraper sk={ilusion7}/>
            <h2><li>Stepping feet Illusion</li></h2>
            <p>
             Los dos rectángulos se mueven igual, pero pareciera que se mueven de a pasos. Presione ESPACIO para quitar las franjas. Tomado de https://michaelbach.de/ot/mot-feetLin/index.html
            </p>
-           <Wraper sk={ilusion4}/>
+           <Wraper sk={ilusion8}/>
        </ol>
       
     </Layout>
