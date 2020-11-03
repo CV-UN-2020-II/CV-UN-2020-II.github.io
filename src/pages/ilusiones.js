@@ -22,7 +22,7 @@ const ilusiones=()=>(
            <Wraper sk={ilusion1}/>
            <h2><li>Breathing Square Illusion</li></h2>
            <p>
-            Visualmente, el cuadrado escondido parece estar haciéndose más grande o más pequeño, pero solo está rotando. Presione IZQUIERDA para ocultar los cuadrados naranjas y DERECHA para mostrarlos. Tomado de https://michaelbach.de/ot/mot-breathingSquare/index.html
+            Visualmente, el cuadrado escondido parece estar haciéndose más grande o más pequeño, pero solo está rotando.
            </p>
            <Wraper sk={ilusion7}/>
            <h2><li>Stepping feet Illusion</li></h2>
