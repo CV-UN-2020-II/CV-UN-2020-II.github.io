@@ -116,12 +116,30 @@ const ilusiones=()=>(
                     <td>Flecha derecha para punto central</td>
 
                 </tr>
+                <tr>
+                    <td>Breathing Square</td>
+                    <td>Movimiento, <br/> Interactividad</td>
+                    <td>https://michaelbach.de/ot/mot-breathingSquare/index.html</td>
+                    <td>Flecha IZQUIERDA para ocultar y DERECHA para mostrar</td>
+
+                </tr>
+                <tr>
+                    <td>Stepping feet</td>
+                    <td>Movimiento, <br/> Interactividad</td>
+                    <td>https://michaelbach.de/ot/mot-feetLin/index.html</td>
+                    <td>ESPACIO para eliminar franjas</td>
+
+                </tr>
             </table>
             <li>Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar</li>
             <p>
                 A titulo personal (Andrés Fernando Román Arévalo) de estos temas cubiertos hasta el momento no me gustaria
                 profundizar en ninguno.Aunque si hablamos globalmente me gustaria investigar y profundizar en temas relacionados
                 con la visualización de la información. 
+            </p>
+            <p>
+                Yo (Albert Yarid Pérez Cárdenas) coincido con mi compañero Andrés, el tema es interesante, pero estoy interesado en otras
+                temáticas de la informática. 
             </p>
         </ol>
     </Layout>
