@@ -2,6 +2,8 @@ import React from "react";
 import Wraper from "../components/wrapper";
 import ilusion1 from "../components/ilusion1";
 import ilusion2 from "../components/ilusion2";
+import ilusion7 from "../components/ilusion7";
+import ilusion8 from "../components/ilusion8";
 import ilusion3 from "../components/ilusion3";
 import ilusion5 from "../components/ilusion5";
 import ilusion6 from "../components/ilusion6";
@@ -26,7 +28,19 @@ const ilusiones=()=>(
            </p>
            <b>Nota: </b> Click para quitar o poner los cuadrados
            <Wraper sk={ilusion2}/>
-           <h2><li>Motion Dots Illusion</li></h2>
+  
+            <h2><li>Breathing Square Illusion</li></h2>
+           <p>
+            Visualmente, el cuadrado escondido parece estar haciéndose más grande o más pequeño, pero solo está rotando. Presione IZQUIERDA para ocultar los cuadrados naranjas y DERECHA para mostrarlos. Tomado de https://michaelbach.de/ot/mot-breathingSquare/index.html
+           </p>
+           <Wraper sk={ilusion7}/>
+           <h2><li>Stepping feet Illusion</li></h2>
+           <p>
+            Los dos rectángulos se mueven igual, pero pareciera que se mueven de a pasos. Presione ESPACIO para quitar las franjas. Tomado de https://michaelbach.de/ot/mot-feetLin/index.html
+           </p>
+           <Wraper sk={ilusion8}/>
+  
+            <h2><li>Motion Dots Illusion</li></h2>
            <p>
               Pareciera que los circulos se movieran en armonia como si fuera el movimiento de una
               ola pero la realidad es que solo se estan movimiendo en su propio lugar.Esta ilusion tambien
@@ -47,6 +61,7 @@ const ilusiones=()=>(
             <b>Nota: </b> Para ver la respuesta correcta presionar la flecha hacia la derecha
             <br/>
            <Wraper sk={ilusion6}/>
+           
        </ol>
         <h2>Preguntas complementarias</h2>
         <ol>
