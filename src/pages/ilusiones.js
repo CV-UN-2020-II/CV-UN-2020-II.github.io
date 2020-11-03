@@ -5,7 +5,6 @@ import ilusion2 from "../components/ilusion2";
 import ilusion7 from "../components/ilusion7";
 import ilusion8 from "../components/ilusion8";
 import ilusion3 from "../components/ilusion3";
-import ilusion4 from "../components/ilusion4";
 import ilusion5 from "../components/ilusion5";
 import ilusion6 from "../components/ilusion6";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
@@ -21,16 +20,7 @@ const ilusiones=()=>(
             en este caso particular se puede observar como resultado de la ilusion una estrella.
            </p>
            <Wraper sk={ilusion1}/>
-           <h2><li>Motion Binding Illusion</li></h2>
-           <p>
-            Es una ejemplo de ilusión optica donde se supone que hay un rectangulo o cuadrado que esta 
-            es movimiento pero en realidad son 4 lineas las cuales se comportan arbitrariamente. Esta ilusion
-            se logra gracias a los 4 cuadrados estaticos de las esquinas.
-           </p>
-           <b>Nota: </b> Click para quitar o poner los cuadrados
-           <Wraper sk={ilusion2}/>
-  
-            <h2><li>Breathing Square Illusion</li></h2>
+           <h2><li>Breathing Square Illusion</li></h2>
            <p>
             Visualmente, el cuadrado escondido parece estar haciéndose más grande o más pequeño, pero solo está rotando. Presione IZQUIERDA para ocultar los cuadrados naranjas y DERECHA para mostrarlos. Tomado de https://michaelbach.de/ot/mot-breathingSquare/index.html
            </p>
@@ -40,6 +30,15 @@ const ilusiones=()=>(
             Los dos rectángulos se mueven igual, pero pareciera que se mueven de a pasos. Presione ESPACIO para quitar las franjas. Tomado de https://michaelbach.de/ot/mot-feetLin/index.html
            </p>
            <Wraper sk={ilusion8}/>
+           <h2><li>Motion Binding Illusion</li></h2>
+           <p>
+            Es una ejemplo de ilusión optica donde se supone que hay un rectangulo o cuadrado que esta 
+            es movimiento pero en realidad son 4 lineas las cuales se comportan arbitrariamente. Esta ilusion
+            se logra gracias a los 4 cuadrados estaticos de las esquinas.
+           </p>
+           <b>Nota: </b> Click para quitar o poner los cuadrados
+           <Wraper sk={ilusion2}/>
+  
   
             <h2><li>Motion Dots Illusion</li></h2>
            <p>
