@@ -7,12 +7,19 @@ import ilusion8 from "../components/ilusion8";
 import ilusion3 from "../components/ilusion3";
 import ilusion5 from "../components/ilusion5";
 import ilusion6 from "../components/ilusion6";
+import ilusion9 from "../components/ilusion9";
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 
 const ilusiones=()=>(
     <Layout>
        <h1>Ilusiones</h1>
        <ol>
+           <h2><li>Triángulo de Penrose</li></h2>
+           <p>
+              Es un objeto imposible que fue creado en 1934 por el artista sueco Oscar Reutersvärd.
+              El objeto tridimensional que se ve en la imagen, aparenta ser el triángulo de Penrose desde un ángulo apropiado.
+           </p>
+           <Wraper sk={ilusion9}/>
            <h2><li>Kanizsa Illusion</li></h2>
            <p>
             Esta es una variación del clasico ejemplo de las llamadas ilusiones de contorno.
@@ -61,7 +68,6 @@ const ilusiones=()=>(
             <b>Nota: </b> Para ver la respuesta correcta presionar la flecha hacia la derecha
             <br/>
            <Wraper sk={ilusion6}/>
-           
        </ol>
         <h2>Preguntas complementarias</h2>
         <ol>
@@ -72,6 +78,15 @@ const ilusiones=()=>(
                     <th>Categoria</th>
                     <th>Referencia</th>
                     <th>Interactividad</th>
+                </tr>
+                <tr>
+                    <td>Triángulo de Penrose</td>
+                    <td>Paradógica</td>
+                    <td>
+                        <a href="https://en.wikipedia.org/wiki/Penrose_triangle">Penrose Triangle</a> <br></br>
+                        <a href="https://github.com/processing/p5.js/wiki/Getting-started-with-WebGL-in-p5">WebGL</a> 
+                    </td>
+                    <td>Siders</td>
                 </tr>
                 <tr>
                     <td>Kanizsa</td>
@@ -114,20 +129,6 @@ const ilusiones=()=>(
                     <td>Distorsion, <br/> Interactividad</td>
                     <td><a href="https://michaelbach.de/ot/sze-muelue/index.html">https://michaelbach.de/ot/sze-muelue/index.html</a> </td>
                     <td>Flecha derecha para punto central</td>
-
-                </tr>
-                <tr>
-                    <td>Breathing Square</td>
-                    <td>Movimiento, <br/> Interactividad</td>
-                    <td>https://michaelbach.de/ot/mot-breathingSquare/index.html</td>
-                    <td>Flecha IZQUIERDA para ocultar y DERECHA para mostrar</td>
-
-                </tr>
-                <tr>
-                    <td>Stepping feet</td>
-                    <td>Movimiento, <br/> Interactividad</td>
-                    <td>https://michaelbach.de/ot/mot-feetLin/index.html</td>
-                    <td>ESPACIO para eliminar franjas</td>
 
                 </tr>
             </table>
