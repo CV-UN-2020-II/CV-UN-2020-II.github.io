@@ -1,6 +1,6 @@
 import React from "react"
 
-//import Scene from  "../components/scene";
+import Scene from  "../components/scene";
 import Test from "../components/baby_test"
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 

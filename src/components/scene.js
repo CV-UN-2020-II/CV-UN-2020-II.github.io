@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { ActionManager } from '@babylonjs/core/Actions/actionManager';
 import { HemisphericLight } from '@babylonjs/core/Lights/hemisphericLight';
+import { PointLight } from '@babylonjs/core/Lights/pointLight';
 import { FreeCamera } from '@babylonjs/core/Cameras/freeCamera';
+import { ArcRotateCamera } from '@babylonjs/core/Cameras/arcRotateCamera';
 import { Vector3 } from '@babylonjs/core/Maths/math';
 import { MeshBuilder } from '@babylonjs/core/Meshes/meshBuilder';
 import BabylonScene from 'babylonjs-hook';
@@ -9,7 +11,8 @@ import BabylonScene from 'babylonjs-hook';
 let box;
 let babylonLink;
 
-const onSceneReady = scene => {
+const onSceneReady = scene => {		
+
   // This creates and positions a free camera (non-mesh)
   var camera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
 
@@ -38,6 +41,7 @@ const onSceneReady = scene => {
 
   // Our built-in 'ground' shape.
   MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+  
 }
 
 /**
