@@ -10,8 +10,10 @@
       link: "/procesamiento2"
     - label: "Ilusiones"
       link: "/ilusiones"
-    - label: "Luces"
+    - label: "Lights"
       link: "/lights"
+    - label: "Luces"
+      link: "/luces"
 - label: "Proyecto"
   items:
     - label: "Propuesta"
