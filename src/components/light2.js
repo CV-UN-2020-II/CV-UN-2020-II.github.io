@@ -3,14 +3,13 @@ You can easily build a simple `React` Component around a `canvas` and Babylon JS
 I have created a minimal example with React+ Babylon:
  */
 import React, { Component } from "react";
-//import * as BABYLON from "babylonjs";
 import * as BABYLON from "@babylonjs/core/Legacy/legacy";
 
 var scene;
 var boxMesh;
-var sphereMesh;
+var light1;
 /**
- * Example temnplate of using Babylon JS with React
+ * Example template of using Babylon JS with React
  */
 class BabylonScene extends Component {
   constructor(props) {
@@ -46,12 +45,15 @@ class BabylonScene extends Component {
     });
 
     //Animation
-    scene.registerBeforeRender(() => {
-      boxMesh.position.z += 0.01;
-      if(boxMesh.position.z > 4.0){
-        boxMesh.position.z=-3.0
-      }
-    });
+    // scene.registerBeforeRender(() => {
+    //   boxMesh.position.z += 0.03;
+    //   if(boxMesh.position.z > 10.0){
+    //     boxMesh.position.z=-3.0
+    //   }
+    // });
+
+    document.addEventListener('keydown', this.logKey);
+
   };
 
   componentWillUnmount() {
@@ -62,6 +64,16 @@ class BabylonScene extends Component {
     this.engine.resize();
   };
 
+  logKey = (e) => {
+    if(e.code == "KeyA"){
+      boxMesh.position.z=-10.0
+      light1.intensity = 0.5;
+    }else if(e.code == "KeyD"){
+      boxMesh.position.z=10.0
+      light1.intensity = 0.2;
+    }
+  }
+
   /**
    * Add Lights
    */
@@ -69,14 +81,10 @@ class BabylonScene extends Component {
     //---------- LIGHT---------------------
     // Create a basic light, aiming 0,1,0 - meaning, to the sky.
     //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 10, 0), scene);
-    var light0 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(-5, 3, -5), scene);
-    light0.intensity = 0.5;
-    var light1 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(-5, 3, 5), scene);
+    //var light0 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(0, 10, 0), scene);
+    //light0.intensity = 0.5;
+    light1 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(0, 4, -20), scene);
     light1.intensity = 0.5;
-    var light2 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(5, 3, -5), scene);
-    light2.intensity = 0.5;
-    var light3 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(5, 3, 5), scene);
-    light3.intensity = 0.5;
   };
 
   /**
@@ -147,19 +155,19 @@ class BabylonScene extends Component {
     );
     boxMesh.position.y = 1;
 
-    sphereMesh = BABYLON.MeshBuilder.CreateSphere(
-      "sphere",
-      { height: 1, width: 1, depth: 1 },
-      scene
-    );
-    sphereMesh.position.y = 1;
-
     // var woodMaterial = new BABYLON.StandardMaterial("wood", scene);
     // woodMaterial.diffuseTexture = new BABYLON.Texture(
     //   "./assets/portal_cube.png",
     //   scene
     // );
     // boxMesh.material = woodMaterial;
+
+    var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+    myMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
+    myMaterial.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
+    myMaterial.ambientColor = new BABYLON.Color3(0.23, 0.98, 0.53);
+    boxMesh.material = myMaterial;
+
   };
 
   render() {
