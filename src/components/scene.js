@@ -1,12 +1,12 @@
 import React from "react"
-import * as THREE from "three"
+import { Canvas} from 'react-three-fiber'
 
-class Scene extends React.Component { 
-  render() {
-    return (
-      <div>Future three js scene</div>
-    )
-  }
-}
+import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 
-export default Scene
+const scene = () => (
+  <Layout>
+    <h1>Hello</h1>
+  </Layout>
+)
+
+export default scene
