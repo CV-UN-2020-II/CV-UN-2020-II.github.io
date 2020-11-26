@@ -6,6 +6,7 @@ import ambiental from "../components/ambiental";
 import testeo from "../components/testeo";
 import combinada from "../components/combinada";
 
+
 const luces=()=>(
     <Layout>
         <h1>Ambiental</h1>
